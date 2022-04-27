@@ -1,0 +1,39 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}">
+{% endblock %}
+
+{% block title %}Color in an Image{% endblock %}
+
+
+{% block content %}
+  <div>
+        <table>
+            <thead>
+                <tr>
+                    <th> Color </th>
+                    <th> Hexcode </th>
+                </tr>
+            </thead>
+            {% for color in colors%}
+            <tbody>
+            <tr>
+                <td style="background-color:{{color}}" class="color-block"></td>
+                <td>{{color}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+    <div class="form-wrapper">
+        <h2 class="title">Image Info</h2>
+        {{ wtf.quick_form(form) }}
+    </div>
+
+        
+{% endblock %}

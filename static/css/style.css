@@ -1,0 +1,9 @@
+
+table,tr,td {
+    width: 75%;
+    border: 1px solid black;
+  }
+
+.color-block{
+    width:40px
+}
